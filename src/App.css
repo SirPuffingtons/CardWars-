@@ -1,0 +1,71 @@
+/* SHARED */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Exo+2:wght@500&family=Roboto+Slab:wght@700&display=swap');
+
+    :root {
+        --borderThin: 1px solid var(--colorBlack);
+        --border: 2px solid var(--colorBlack);
+        --borderThick: 4px solid var(--colorBlack);
+
+        --boxShadow: 0 0 3px 0 var(--colorBlack);
+        --boxShadowFocus: 0 0 0 3px var(--colorGrayD), 0 0 0 6px var(--colorGrayL);
+
+        --colorPrimary1: rgb(255, 114, 67);
+        --colorPrimary2: rgb(255, 183, 68);
+        --colorPrimary3: rgb(25, 204, 201);
+
+        --colorWhite: rgb(250, 250, 250);
+        --colorGrayL: rgb(210, 210, 210);
+        --colorGray: rgb(150, 150, 150);
+        --colorGrayD: rgb(90, 90, 90);
+        --colorBlack: rgb(5, 5, 5);
+
+        --cursorDefault: default;
+        --cursorPointer: pointer;
+
+        --fontFamilySpecial: 'Cinzel Decorative', serif;
+        --fontFamilyText: 'Exo 2', sans-serif;
+        --fontFamilyTitle: 'Roboto Slab', serif;
+
+        --fontSize: 16px;
+
+        --textShadow: 0 0 3px var(--colorBlack);
+
+        --transition: 0.15s;
+    }
+
+    * {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        box-sizing: border-box;
+        color: var(--colorBlack);
+        cursor: var(--cursorDefault);
+        font-family: var(--fontFamilyText);
+        font-size: var(--fontSize);
+        margin: 0;
+        outline: none;
+        padding: 0;
+        text-shadow: none;
+        text-decoration: none;
+        user-select: none;
+    }
+
+    #root {
+        background-image: url('./_shared/background/congruent_outline.png');
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #root, #root * {display: grid}
+/* button */
+    button {
+        background-color: var(--colorPrimary2);
+        cursor: var(--cursorPointer);
+        font-weight: 900;
+        padding: 0.5rem 0.9rem 0.65rem 0.9rem;
+        transition: var(--transition) box-shadow, var(--transition) background;
+    }
+
+    button:focus {box-shadow: var(--boxShadowFocus)}
+    button:active {background-color: var(--colorWhite)}

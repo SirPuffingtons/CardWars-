@@ -1,17 +1,17 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import './SignIn.css'
 
-    const SignIn = ({auth}) => {
+const SignIn = ({auth}) => {
 
-    const connect = () => signInWithPopup(auth, new GoogleAuthProvider())
+    const connect = () => signInWithPopup(auth, new GoogleAuthProvider()).catch(()=>{})
 
     return (
-    <main id='LoginForm'>
+    <main className='signIn'>
         <header>
             <div>CARD</div>
-            <div><span>W</span>ARS</div>
+            <div>WARS</div>
         </header>
-        <button onClick={connect}>Sign in with Google</button>
+        <button onClick={connect}>Play Now</button>
     </main>
     )
 

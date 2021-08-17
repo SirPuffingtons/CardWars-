@@ -1,0 +1,22 @@
+.signIn {
+    background-image: url('../_shared/background/diagmonds.png');
+    border-bottom: var(--borderThick);
+    border-bottom-color: var(--colorPrimary1);
+    border-top: var(--borderThick);
+    border-top-color: var(--colorPrimary3);
+    gap: 2.2rem;
+    justify-items: center;
+    padding: 2rem 2.2rem 2.2rem 2.2rem;
+    place-self: center;
+}
+
+.signIn > header {text-align: center}
+
+.signIn > header > div {
+    font-family: var(--fontFamilySpecial);
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+}
+
+.signIn > header > div:first-of-type {color: var(--colorPrimary3)}
+.signIn > header > div:last-of-type {color: var(--colorPrimary1)}
