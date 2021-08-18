@@ -1,5 +1,5 @@
 .signIn {
-    background-image: url('../_shared/background/diagmonds.png');
+    background-image: var(--backgroundImage);
     border-bottom: var(--borderThick);
     border-bottom-color: var(--colorPrimary1);
     border-top: var(--borderThick);

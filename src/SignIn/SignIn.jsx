@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import {GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
 import './SignIn.css'
 
 const SignIn = ({auth}) => {

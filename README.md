@@ -1,4 +1,6 @@
 # CardWars
+![Capture](https://user-images.githubusercontent.com/49204953/129840087-8e3fc32d-7cc8-447b-bea9-8d935239d3ba.PNG)
+
 CardWars is a browser-based trading card game designed with desktop and mobile in mind.
 
 ## Features

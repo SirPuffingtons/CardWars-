@@ -16,12 +16,12 @@ initializeApp({
 
 const App = () => {
     const auth = getAuth()
-
+    
     const [user] = useAuthState(auth)
 
     return <>
         {user
-            ? <Dashboard auth={auth} />
+            ? <Dashboard />
             : <SignIn auth={auth} />
         }
     </>
