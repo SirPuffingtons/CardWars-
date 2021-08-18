@@ -1,34 +1,45 @@
-.dashboard {grid-template-rows: max-content auto}
+/* .dashboard */
+    .dashboard {
+        grid-template-rows: max-content auto;
+    }
 
-.dashboard > header {
-    background-image: var(--backgroundImage);
-    border-bottom: var(--border);
-    border-bottom-color: var(--colorPrimary1);
-    border-top: var(--border);
-    border-top-color: var(--colorPrimary3);
-    gap: 1rem;
-    grid-template-columns: max-content auto;
-    padding: 0.5rem;
-}
+    .dashboard > nav {
+        border-bottom: var(--borderThick);
+        gap: 0.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0.5rem 0.5rem 0 0.5rem;
+    }
 
-.dashboard > header > div {
-    color: var(--colorPrimary3);
-    line-height: 1.5rem;
-}
+    .dashboard > nav > button {
+        border-bottom: none;
+        opacity: 0.5;
+    }
 
-.dashboard > header > div,
-.dashboard > header > div > span {
-    font-family: var(--fontFamilySpecial);
-    font-size: 1.5rem;
-}
+    .dashboard > nav > button.active, .dashboard > nav > button:active {opacity: 1}
 
-.dashboard > header > div > span {color: var(--colorPrimary1)}
+    .dashboard > nav > button:active {
+        background-color: var(--colorLow);
+        color: var(--colorHigh);
+    }
+/* .news */
+    .dashboard > main > .news {
+        border: var(--borderThin);
+        gap: 0.5rem;
+        grid-template-columns: auto min-content;
+        padding: 1rem;
+    }
 
-.dashboard > header > nav {
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-self: center;
-    align-items: center;
-}
+    .dashboard > main > .news > header {
+        font-family: var(--fontFamilySpecial);
+        font-size: 1.5rem;
+    }
 
-.dashboard > header > nav > button.active {color: var(--colorBlack)}
+    .dashboard > main > .news > button {
+        border: var(--borderThin);
+        font-family: var(--fontFamilyText);
+        height: 1.75rem;
+        line-height: 1.19rem;
+        padding: 0 0.5rem;
+    }
+
+    .dashboard > main > .news > main {grid-column: 1/3}

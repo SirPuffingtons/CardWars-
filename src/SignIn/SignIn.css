@@ -1,12 +1,6 @@
 .signIn {
-    background-image: var(--backgroundImage);
-    border-bottom: var(--borderThick);
-    border-bottom-color: var(--colorPrimary1);
-    border-top: var(--borderThick);
-    border-top-color: var(--colorPrimary3);
-    gap: 2.2rem;
+    gap: 2rem;
     justify-items: center;
-    padding: 2rem 2.2rem 2.2rem 2.2rem;
     place-self: center;
 }
 
@@ -14,9 +8,6 @@
 
 .signIn > header > div {
     font-family: var(--fontFamilySpecial);
-    font-size: 3.5rem;
-    line-height: 3.5rem;
+    font-size: 4rem;
+    line-height: 4rem;
 }
-
-.signIn > header > div:first-of-type {color: var(--colorPrimary3)}
-.signIn > header > div:last-of-type {color: var(--colorPrimary1)}

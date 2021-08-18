@@ -9,14 +9,11 @@ const Dashboard = () => {
 
     return (
     <main className='dashboard'>
-        <header>
-            <div>Card<span>Wars</span></div>
-            <nav>
-                <button onClick={() => setTab(1)} className={tab === 1 ? 'active' : ''}>Home</button>
-                <button onClick={() => setTab(2)} className={tab === 2 ? 'active' : ''}>Battle</button>
-                <button onClick={() => setTab(3)} className={tab === 3 ? 'active' : ''}>Trade</button>
-            </nav>
-        </header>
+        <nav>
+            <button onClick={() => setTab(1)} className={tab === 1 ? 'active' : ''}>Home</button>
+            <button onClick={() => setTab(2)} className={tab === 2 ? 'active' : ''}>Battle</button>
+            <button onClick={() => setTab(3)} className={tab === 3 ? 'active' : ''}>Trade</button>
+        </nav>
 
         {tab === 1 && <Home />}
         {tab === 2 && <Battle />}

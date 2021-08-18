@@ -1,0 +1,26 @@
+.collapsible.collapsed > header {opacity: 0.5}
+.collapsible.collapsed > header > span {transform: rotateZ(90deg)}
+.collapsible.collapsed > main {display: none !important}
+
+.collapsible > header {
+    background-color: var(--colorLow);
+    cursor: var(--cursorPointer);
+    font-family: var(--fontFamilyTitle);
+    gap: 0.5rem;
+    grid-template-columns: auto max-content;
+    padding: 0.25rem 0.5rem;
+}
+
+.collapsible > header, .home > .collapsible > header > span {color: var(--colorHigh)}
+
+.collapsible > header > span {
+    align-self: center;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.collapsible > main {
+    border: var(--border);
+    border-top: none;
+    padding: 1rem;
+}
