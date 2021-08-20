@@ -26,7 +26,7 @@ const Dashboard = () => {
                 .then(() => setDisplayName(f.auth.currentUser.displayName))
             })
         })
-    }, [])
+    }, [f, databaseUser])
 
     const [tab, setTab] = useState(1)
 
