@@ -1,4 +1,4 @@
-const cardSchema = {
+const cards = [{
     _id: 0,
     name: 'Magical Moo-Moo',
     images: { // A set of all images representing this card, of which some are earned as rewards for gameplay, and others, from the in-game item shop.
@@ -20,4 +20,10 @@ const cardSchema = {
     ],
     passives: {}, // The card's passive upgrades. Ex: +1% crit on [active] first use in a battle.
     ultimate: {} // The ultimate ability, which is earned by maxing out the card. Ultimates, once unlocked (while the maxed card is kept in the player's collection), are equippable as a regular tactic on ANY other owned card.
-}
+}]
+
+
+// Converted to an array:
+// [_id, imageId, level, currentXP, IF level !== 1: critUpgradePointsSpent, IF level !== 1: dodgeUpgradePointsSpent, []]
+
+// EX: Level 1 Magical Moo-Moo: [0, 0, 1, 0, ]

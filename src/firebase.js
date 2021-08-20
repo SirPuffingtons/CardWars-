@@ -14,10 +14,10 @@ initializeApp({
 const auth = getAuth()
 const database = getFirestore()
 
-function displayNameGen() {
+const generateDisplayName = () => {
     const words =  ['Potato', 'Shark', 'Hunter', 'Collector', 'CardMaster', 'Wolf', 'Mystery', 'Doggo', 'Alpaca', 'Lizard', 'Wizard', 'Overlord', 'Tomato']
 
-    return words[Math.round(Math.random() * words.length)] + `${Math.round(Math.random() * 10000)}`
+    return words[Math.round(Math.random() * (words.length-1))] + `${Math.round(Math.random() * 10000)}`
 }
 
 const userSchema = {
@@ -25,4 +25,13 @@ const userSchema = {
     coins: 0
 }
 
-export {auth, database, displayNameGen, doc, onSnapshot, setDoc, updateProfile, userSchema}
+export {
+    auth,
+    database,
+    generateDisplayName,
+    doc,
+    onSnapshot,
+    setDoc,
+    updateProfile,
+    userSchema
+}

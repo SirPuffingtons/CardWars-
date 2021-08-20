@@ -6,29 +6,31 @@ import CardButton from './Collapsible/CardButton/CardButton'
 import './Dashboard.css'
 
 const Dashboard = () => {
-    const {fb} = useContext(FirebaseContext)
+    const {f} = useContext(FirebaseContext)
 
     const [databaseUser, setDatabaseUser] = useState()
-    const [displayName, setDisplayName] = useState(fb.auth.currentUser.displayName)
+    const [displayName, setDisplayName] = useState(f.auth.currentUser.displayName)
 
     useEffect(() => {
-        const ref = fb.doc(fb.database, 'users', fb.auth.currentUser?.uid)
+        const ref = f.doc(f.database, 'users', f.auth.currentUser?.uid)
 
-        fb.onSnapshot(ref, user => {
+        f.onSnapshot(ref, user => {
             if(user.exists()) {setDatabaseUser(user.data())}
 
-            else fb.setDoc(ref, fb.userSchema)
+            else f.setDoc(ref, f.userSchema)
             .then(res => {
                 setDatabaseUser(res.data())
                 console.log(databaseUser)
 
-                fb.updateProfile(fb.auth.currentUser, {displayName: fb.displayNameGen()})
-                .then(() => setDisplayName(fb.auth.currentUser.displayName))
+                f.updateProfile(f.auth.currentUser, {displayName: f.generateDisplayName()})
+                .then(() => setDisplayName(f.auth.currentUser.displayName))
             })
         })
     }, [])
 
     const [tab, setTab] = useState(1)
+
+    if(!databaseUser) return <></>
 
     return (
     <main className='dashboard'>
@@ -45,7 +47,7 @@ const Dashboard = () => {
             />
 
             <Collapsible title="MY CARDS" cards>
-                {databaseUser?.cards?.map(card => <CardButton key={card.name} _id={card.name} />)}
+                {databaseUser.cards?.map(card => <CardButton key={card.name} _id={card.name} />)}
                 {/* For each card in the account, spawn a CardButton component. A CardButton, when clicked, will spawn a modal window that displays the full Card element.*/}
             </Collapsible>
 
@@ -53,8 +55,8 @@ const Dashboard = () => {
 
             <Collapsible title='OPTIONS'>
                 <div className="cols2">
-                <button onClick={() => fb.updateProfile(fb.auth.currentUser, {displayName: fb.displayNameGen()}).then(() => setDisplayName(fb.auth.currentUser.displayName))}>Edit Profile</button>
-                <button onClick={() => fb.auth.signOut()}>Sign Out</button>
+                <button onClick={() => f.updateProfile(f.auth.currentUser, {displayName: f.generateDisplayName()}).then(() => setDisplayName(f.auth.currentUser.displayName))}>Edit Profile</button>
+                <button onClick={() => f.auth.signOut()}>Sign Out</button>
                 </div>
             </Collapsible>
         </section>
