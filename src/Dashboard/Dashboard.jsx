@@ -9,7 +9,7 @@ const Dashboard = () => {
     const {f} = useContext(FirebaseContext)
 
     const [databaseUser, setDatabaseUser] = useState()
-    const [displayName, setDisplayName] = useState(f.auth.currentUser.displayName)
+    const [displayName, setDisplayName] = useState(f?.auth?.currentUser?.displayName)
 
     useEffect(() => {
         const ref = f.doc(f.database, 'users', f.auth.currentUser?.uid)
