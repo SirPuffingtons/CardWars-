@@ -1,0 +1,22 @@
+.dismissible {
+    border: var(--border);
+    gap: 0.5rem;
+    grid-template-columns: auto min-content;
+    padding: 1rem;
+}
+
+.dismissible > header {
+    font-family: var(--fontFamilySpecial);
+    font-size: 1.5rem;
+}
+
+.dismissible > button {
+    border: var(--border);
+    font-family: var(--fontFamilyText);
+    height: 1.75rem;
+    justify-self: right;
+    line-height: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.dismissible > main {grid-column: 1/3}

@@ -1,30 +1,26 @@
-import {initializeApp} from 'firebase/app'
-import {getAuth} from 'firebase/auth'
-import {useAuthState} from 'react-firebase-hooks/auth'
+import * as fb from './firebase'
+import {createContext, useState} from 'react'
 import Dashboard from './Dashboard/Dashboard'
 import SignIn from './SignIn/SignIn'
 import './App.css'
 
-initializeApp({
-    apiKey: 'AIzaSyBRhhYy8mG8ihJjbdcNvn4CDArbiuc6iCw',
-    authDomain: 'cardwars-222cf.firebaseapp.com',
-    projectId: 'cardwars-222cf',
-    storageBucket: 'cardwars-222cf.appspot.com',
-    messagingSenderId: '194926696469',
-    appId: '1:194926696469:web:a214dde6c043dce4a1561c'
-})
+const FirebaseContext = createContext()
 
 const App = () => {
-    const auth = getAuth()
-    
-    const [user] = useAuthState(auth)
+    const [user, setUser] = useState(fb.auth.currentUser)
+    fb.auth.onAuthStateChanged(() => setUser(fb.auth.currentUser))
 
     return <>
+    
         {user
-            ? <Dashboard />
-            : <SignIn auth={auth} />
+            ? <FirebaseContext.Provider value={{fb}}>
+                <Dashboard />
+              </FirebaseContext.Provider>
+
+            : <SignIn auth={fb.auth} />
         }
+
     </>
 }
 
-export default App
+export {FirebaseContext, App}

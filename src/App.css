@@ -2,9 +2,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Exo+2:wght@500&family=Roboto+Slab:wght@700&display=swap');
 
     :root {
-        --borderThin: 2px solid var(--colorLow);
-        --border: 3px solid var(--colorLow);
-        --borderThick: 4px solid var(--colorLow);
+        --border: 2px solid var(--colorLow);
 
         --boxShadowFocus: inset 0 0 0 1px var(--colorHigh), inset 0 0 0 3px var(--colorLow), inset 0 0 0 4px var(--colorHigh), inset 0 0 0 6px var(--colorLow);
 
@@ -51,7 +49,7 @@
 /* button */
     button {
         background-color: var(--colorLow);
-        border: var(--borderThin);
+        border: var(--border);
         color: var(--colorHigh);
         cursor: var(--cursorPointer);
         font-family: var(--fontFamilyTitle);

@@ -1,0 +1,22 @@
+.cardButton {
+    border: none;
+    filter: brightness(1);
+    padding: 0;
+    transition: var(--transition) filter, var(--transition) box-shadow;
+}
+
+.cardButton > img {
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+}
+
+.cardButton:focus {
+    box-shadow: 0 0 0 1px var(--colorHigh), 0 0 0 3px var(--colorLow), 0 0 0 4px var(--colorHigh), 0 0 0 6px var(--colorLow);
+    filter: brightness(1.2);
+}
+
+.cardButton:active {
+    box-shadow: none;
+    filter: brightness(1.4);
+}

@@ -11,9 +11,10 @@
     padding: 0.25rem 0.5rem;
 }
 
-.collapsible > header, .home > .collapsible > header > span {color: var(--colorHigh)}
+.collapsible > header, .collapsible > header > span {color: var(--colorHigh)}
 
 .collapsible > header > span {
+    transition: var(--transition) transform;
     align-self: center;
     font-size: 0.9rem;
     pointer-events: none;
@@ -23,4 +24,13 @@
     border: var(--border);
     border-top: none;
     padding: 1rem;
+}
+
+.collapsible > main > .cols2 {
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.collapsible > main.cards {
+    grid-template-columns: repeat(auto-fill, minmax(15vw, 125px));
 }
