@@ -1,26 +1,18 @@
-import * as f from './firebase'
-import {createContext, useState} from 'react'
+import {auth} from './firebase'
+import {useState} from 'react'
+import LoadingScreen from './_utils/LoadingScreen/LoadingScreen'
 import Dashboard from './Dashboard/Dashboard'
 import SignIn from './SignIn/SignIn'
 import './App.css'
 
-const FirebaseContext = createContext()
-
 const App = () => {
-    const [user, setUser] = useState(f.auth.currentUser)
-    f.auth.onAuthStateChanged(() => setUser(f.auth.currentUser))
-
-    return <>
+    const [user, setUser] = useState(undefined)
     
-        {user
-            ? <FirebaseContext.Provider value={{f}}>
-                <Dashboard />
-              </FirebaseContext.Provider>
+    auth.onAuthStateChanged(() => setUser(auth.currentUser))
 
-            : <SignIn auth={f.auth} />
-        }
-
-    </>
+    return user === undefined
+    ? <LoadingScreen />
+    : <> {user ? <Dashboard /> : <SignIn />} </>
 }
 
-export {FirebaseContext, App}
+export default App

@@ -1,7 +1,7 @@
-import {GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
+import {auth, GoogleAuthProvider, signInWithPopup} from '../firebase'
 import './SignIn.css'
 
-const SignIn = ({auth}) => {
+const SignIn = () => {
     const connect = () => signInWithPopup(auth, new GoogleAuthProvider()).catch(()=>{})
 
     return (

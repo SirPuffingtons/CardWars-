@@ -1,8 +1,8 @@
-import './CardButton.css'
+import './Thumbnail.css'
 
-const CardButton = ({_id}) => {
+const Thumbnail = ({_id}) => {
 
-    return <button className="cardButton">
+    return <button className="thumbnail">
         <img
             draggable="false"
             src={`/images/cards/${_id.replaceAll(' ', '_').toLowerCase()}.jpg`} alt={_id}
@@ -11,4 +11,4 @@ const CardButton = ({_id}) => {
     
 }
 
-export default CardButton
+export default Thumbnail

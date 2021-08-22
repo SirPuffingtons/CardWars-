@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app'
-import {getAuth, updateProfile} from 'firebase/auth'
+import {getAuth, GoogleAuthProvider, signInWithPopup, updateProfile} from 'firebase/auth'
 import {doc, getFirestore, onSnapshot, setDoc} from 'firebase/firestore'
 
 initializeApp({
@@ -12,26 +12,6 @@ initializeApp({
 })
 
 const auth = getAuth()
-const database = getFirestore()
+const db = getFirestore()
 
-const generateDisplayName = () => {
-    const words =  ['Potato', 'Shark', 'Hunter', 'Collector', 'CardMaster', 'Wolf', 'Mystery', 'Doggo', 'Alpaca', 'Lizard', 'Wizard', 'Overlord', 'Tomato']
-
-    return words[Math.round(Math.random() * (words.length-1))] + `${Math.round(Math.random() * 10000)}`
-}
-
-const userSchema = {
-    cards: [{name: 'Estrielle De Vaux'}],
-    coins: 0
-}
-
-export {
-    auth,
-    database,
-    generateDisplayName,
-    doc,
-    onSnapshot,
-    setDoc,
-    updateProfile,
-    userSchema
-}
+export {auth, db, doc, GoogleAuthProvider, onSnapshot, setDoc, signInWithPopup, updateProfile}

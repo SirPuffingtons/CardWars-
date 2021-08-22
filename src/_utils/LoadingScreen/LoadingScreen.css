@@ -1,0 +1,19 @@
+@keyframes spinningLoader {to {transform: rotate(360deg)}}
+
+.loadingScreen, .loadingScreen::after {
+    height: 8rem;
+    place-self: center;
+    width: 8rem;
+}
+
+.loadingScreen {
+    animation: spinningLoader 10s linear infinite;
+    background-color: var(--colorLow);
+}
+
+.loadingScreen::after {
+    animation: spinningLoader 5s linear infinite reverse;
+    background-color: var(--colorLow);
+    content: '';
+    opacity: 0.5;
+}

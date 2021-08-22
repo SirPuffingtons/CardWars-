@@ -1,20 +1,20 @@
-.cardButton {
+.thumbnail {
     border: none;
     padding: 0;
     transition: var(--transition) filter, var(--transition) box-shadow;
 }
 
-.cardButton > img {
+.thumbnail > img {
     object-fit: cover;
     pointer-events: none;
     width: 100%;
 }
 
-.cardButton:focus {
+.thumbnail:focus {
     box-shadow: 0 0 0 1px var(--colorHigh), 0 0 0 3px var(--colorLow), 0 0 0 4px var(--colorHigh), 0 0 0 6px var(--colorLow);
 }
 
-.cardButton:active {
+.thumbnail:active {
     box-shadow: none;
     filter: grayscale(1);
 }
