@@ -1,66 +1,68 @@
-/* root */
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Exo+2:wght@500&family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Exo+2:wght@500&family=Roboto+Slab:wght@700&display=swap');
 
-    :root {
-        --border: 2px solid var(--colorLow);
+:root {
+    --border: 2px solid var(--colorLow);
 
-        --boxShadowFocus: inset 0 0 0 1px var(--colorHigh), inset 0 0 0 3px var(--colorLow), inset 0 0 0 4px var(--colorHigh), inset 0 0 0 6px var(--colorLow);
+    --boxShadowFocus: inset 0 0 0 1px var(--colorHigh), inset 0 0 0 3px var(--colorLow), inset 0 0 0 4px var(--colorHigh), inset 0 0 0 6px var(--colorLow);
 
-        --colorHigh: hsl(0, 0%, 100%);
-        --colorLow: hsl(0, 0%, 0%);
+    --colorHigh: hsl(0, 0%, 100%);
+    --colorLow: hsl(0, 0%, 0%);
 
-        --cursorDefault: default;
-        --cursorPointer: pointer;
+    --cursorDefault: default;
+    --cursorPointer: pointer;
 
-        --fontFamilySpecial: 'Cinzel Decorative', serif;
-        --fontFamilyText: 'Exo 2', sans-serif;
-        --fontFamilyTitle: 'Roboto Slab', serif;
+    --fontFamilySpecial: 'Cinzel Decorative', serif;
+    --fontFamilyText: 'Exo 2', sans-serif;
+    --fontFamilyTitle: 'Roboto Slab', serif;
 
-        --fontSize: 16px;
+    --fontSize: 16px;
 
-        --transition: 0.15s;
-    }
+    --transition: 0.15s;
+}
 
-    * {
-        background-color: transparent;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        box-sizing: border-box;
-        color: var(--colorLow);
-        cursor: var(--cursorDefault);
-        font-family: var(--fontFamilyText);
-        font-size: var(--fontSize);
-        margin: 0;
-        outline: none;
-        padding: 0;
-        text-shadow: none;
-        text-decoration: none;
-        user-select: none;
-    }
+* {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: var(--colorLow);
+    cursor: var(--cursorDefault);
+    font-family: var(--fontFamilyText);
+    font-size: var(--fontSize);
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-shadow: none;
+    text-decoration: none;
+    user-select: none;
+}
 
-    #root {
-        height: 100vh;
-        width: 100vw;
-        background-color: var(--colorHigh);
-    }
+#root, #root * {display: grid}
 
-    #root, #root * {display: grid}
-/* button */
-    button {
-        background-color: var(--colorLow);
-        border: var(--border);
-        color: var(--colorHigh);
-        cursor: var(--cursorPointer);
-        font-family: var(--fontFamilyTitle);
-        padding: 0.35rem 1.1rem 0.5rem 1.1rem;
-        transition: var(--transition) box-shadow, var(--transition) background;
-    }
+#root {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--colorHigh);
+}
 
-    button:focus {box-shadow: var(--boxShadowFocus)}
+@keyframes fadeIn {from {opacity: 0} to {opacity: 1}}
+#root > * {animation: fadeIn 0.5s linear 1 }
 
-    button:active {
-        background-color: var(--colorHigh);
-        box-shadow: none;
-        color: var(--colorLow);
-    }
+button {
+    background-color: var(--colorLow);
+    border: var(--border);
+    color: var(--colorHigh);
+    cursor: var(--cursorPointer);
+    font-family: var(--fontFamilyTitle);
+    padding: 0.35rem 1.1rem 0.5rem 1.1rem;
+    transition: var(--transition) box-shadow, var(--transition) background;
+}
+
+button:focus {box-shadow: var(--boxShadowFocus)}
+
+button:active {
+    background-color: var(--colorHigh);
+    box-shadow: none;
+    color: var(--colorLow);
+}

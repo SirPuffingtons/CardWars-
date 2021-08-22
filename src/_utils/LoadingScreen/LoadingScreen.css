@@ -1,19 +1,22 @@
-@keyframes spinningLoader {to {transform: rotate(360deg)}}
+@keyframes spinningLoader1 {to {transform: rotate(360deg)}}
+@keyframes spinningLoader2 {to {transform: rotate(405deg)}}
 
 .loadingScreen, .loadingScreen::after {
-    height: 8rem;
+    background-color: var(--colorLow);
     place-self: center;
-    width: 8rem;
 }
 
 .loadingScreen {
-    animation: spinningLoader 10s linear infinite;
-    background-color: var(--colorLow);
+    animation: spinningLoader1 6s linear infinite !important;
+    height: 3rem;
+    width: 3rem;
 }
 
 .loadingScreen::after {
-    animation: spinningLoader 5s linear infinite reverse;
-    background-color: var(--colorLow);
+    animation: spinningLoader2 1.5s linear infinite reverse;
     content: '';
+    height: 6rem;
     opacity: 0.5;
+    transform: rotate(45deg);
+    width: 6rem;
 }

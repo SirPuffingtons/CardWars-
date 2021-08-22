@@ -25,7 +25,10 @@ const Dashboard = () => {
         onSnapshot(ref, user =>
             user.exists()
                 ? setDbUser(user.data())
-                : setDoc(ref, dbUserSchema).then(res => setDbUser(res.data()), generateDisplayName()))
+                : setDoc(ref, dbUserSchema)
+                    .then(res => setDbUser(res.data()), generateDisplayName())
+                    .catch()
+        )
     }, [])
 
     if(!dbUser) return <></>

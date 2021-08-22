@@ -1,7 +1,15 @@
 .thumbnail {
-    border: none;
     padding: 0;
+    position: relative;
     transition: var(--transition) filter, var(--transition) box-shadow;
+}
+
+.thumbnail::after {
+    content: '';
+    height: 100%;
+    position: absolute;
+    transition: var(--transition) box-shadow;
+    width: 100%;
 }
 
 .thumbnail > img {
@@ -10,11 +18,13 @@
     width: 100%;
 }
 
-.thumbnail:focus {
-    box-shadow: 0 0 0 1px var(--colorHigh), 0 0 0 3px var(--colorLow), 0 0 0 4px var(--colorHigh), 0 0 0 6px var(--colorLow);
-}
+.thumbnail:focus {box-shadow: none}
+
+.thumbnail:focus::after {box-shadow: inset 0 0 0 1px var(--colorHigh), inset 0 0 0 3px var(--colorLow), inset 0 0 0 4px var(--colorHigh), inset 0 0 0 6px var(--colorLow)}
 
 .thumbnail:active {
     box-shadow: none;
-    filter: grayscale(1);
+    filter: grayscale(0.75);
 }
+
+.thumbnail:active::after {box-shadow: none}
