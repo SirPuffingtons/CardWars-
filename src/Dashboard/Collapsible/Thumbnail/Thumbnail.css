@@ -1,4 +1,5 @@
 .thumbnail {
+    border: none;
     padding: 0;
     position: relative;
     transition: var(--transition) filter, var(--transition) box-shadow;
@@ -20,7 +21,7 @@
 
 .thumbnail:focus {box-shadow: none}
 
-.thumbnail:focus::after {box-shadow: inset 0 0 0 1px var(--colorHigh), inset 0 0 0 3px var(--colorLow), inset 0 0 0 4px var(--colorHigh), inset 0 0 0 6px var(--colorLow)}
+.thumbnail:focus::after {box-shadow: inset 0 0 0 2px var(--colorLow), inset 0 0 0 6px var(--colorHigh)}
 
 .thumbnail:active {
     box-shadow: none;

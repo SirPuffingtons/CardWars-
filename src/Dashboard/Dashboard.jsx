@@ -1,5 +1,5 @@
 import {auth, db, doc, onSnapshot, setDoc, updateProfile} from '../firebase'
-import {dbUserSchema} from '../_utils/schemas/dbUserSchema'
+import {dbUserSchema} from '../_utils/dbUserSchema'
 import {useEffect, useState} from 'react'
 import Dismissible from './Dismissible/Dismissible'
 import Collapsible from './Collapsible/Collapsible'
@@ -47,14 +47,12 @@ const Dashboard = () => {
             />
 
             <Collapsible title="MY CARDS" cards>
-                {dbUser.cards.map(card => <Thumbnail key={card} _id={card} />)}
+                {dbUser.cards.map(card => <Thumbnail key={card} card={card}/>)}
             </Collapsible>
-
-            <Collapsible title="MY STATS" collapsed />
 
             <Collapsible title='OPTIONS'>
                 <div className="cols2">
-                <button onClick={() => generateDisplayName()}>Edit Profile</button>
+                <button onClick={()=>{}}>Edit Profile</button>
                 <button onClick={() => auth.signOut()}>Sign Out</button>
                 </div>
             </Collapsible>

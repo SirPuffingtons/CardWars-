@@ -1,0 +1,28 @@
+.card {
+    align-self: flex-start;
+    background-color: var(--colorHigh);
+    border: var(--border);
+    justify-self: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.card > header {
+    gap: 0.5rem;
+    grid-template-columns: auto max-content;
+}
+
+.card > header > div {
+    background-color: var(--colorLow);
+    color: var(--colorHigh);
+    font-family: var(--fontFamilyTitle);
+}
+
+.card > header > div:first-of-type {padding: 0.25rem 0.5rem 0.3rem 0.5rem}
+.card > header > div:last-of-type {padding: 0.25rem 0.75rem 0.3rem 0.75rem}
+
+.card > img {
+    border: var(--border);
+    max-width: 500px;
+    width: 100%;
+}
